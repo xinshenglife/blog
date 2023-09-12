@@ -8,7 +8,16 @@ https://cloud.tencent.com/developer/article/1929195
 
 # 同步代码使用 try catch 捕获异常
 # 异步代码异常 注册Event error事件 或者最终process.on('uncaughtException')
-大部分异步API一般都有一个回调函数 callback 作为其参数，而大部分同步API则不会
+# Promise异常捕获
+- 使用Promise的catch方法内部消化；
+- 使用async和await将异步错误转同步错误再由try catch捕获
+
+- catch方法可以捕获 前面任意then方法抛出的错误
+- then方法的第二个参数只能捕获上一层then方法抛出的错误，而不能捕获当前then方法里面抛出的错误
+- then的第二个参数本来就是用来处理上一层状态为失败的
+https://juejin.cn/post/7113537808207347719
+
+## 大部分异步API一般都有一个回调函数 callback 作为其参数，而大部分同步API则不会
 ```
 const fs = require('fs');
 fs.readFile('/etc/passwd', (err, data) => {
