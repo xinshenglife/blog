@@ -6,17 +6,14 @@ Mac RTMP RTSP测试播放器https://iina.io/ 现在直接用 IINA 就行了，
 
 ## rtsp推流命令
 ```
-ffmpeg -re -stream_loop -1  -i  01.mp4   -preset ultrafast -vf scale=iw/2:ih/2 -strict -2 -c copy -f rtsp rtsp://127.0.0.1:8554/live/test1  
+ffmpeg -re -stream_loop -1 -i 01.mp4 -preset ultrafast -vf scale=iw/2:ih/2 -strict -2 -c copy -f rtsp rtsp://127.0.0.1:8554/live/test1  
 ```
 ```
-ffmpeg -re -stream_loop -1  -i 01.mp4   -b:v 100k -c copy  -f rtsp rtsp://127.0.0.1:8554/live/test1
+ffmpeg -re -stream_loop -1 -i 02.mp4 -vf scale=320:240 -c:a copy -c:v h264 -f rtsp rtsp://127.0.0.1:8554/live/test2
 ```
-
-```
-ffmpeg -re -stream_loop -1  -i 02.mp4 -vf scale=320:240  -c:a copy  -c:v h264 -f rtsp rtsp://127.0.0.1:8554/live/test2
-```
-- -stream_loop -1 表示一直循环  
-- -re "Read input at native frame rate" 也是循环
+- -stream_loop  -1 表示无限循环 
+- -re 按照原视频帧率
+- 只能参数后面空格一个 不然多个空格会导致无法识别ffmpeg6.0
 ```
 ffmpeg -i video_320x180.mp4 -vf scale=320:240,setdar=4:3 video_320x240.mp4 -c:a copy -c:v h264 -hide_banner //设置分辨率小 指定视频编码
 ```
