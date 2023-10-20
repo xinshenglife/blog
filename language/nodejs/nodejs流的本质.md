@@ -1,4 +1,6 @@
  
+ # 就是固定的buff 批量处理数据 否则不叫流
+ websocket 或者http 服务很多 读写流都是保护.所以只能使用它的方法发送  管道 stdin stdout stderr 本质都是读写虚拟的文件  然后buff
  # 正常大文件读取  分批读取读取发送出去
  ```
  function readFile(filePathName, fileStartPostion, pageSize = 2048) {
