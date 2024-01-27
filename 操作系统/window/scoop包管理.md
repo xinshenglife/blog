@@ -37,6 +37,12 @@ scoop install extras/anydesk
 UCRT（通用 C 运行时）是一个较新的版本，Microsoft Visual Studio 也默认使用它。它的工作和行为应该就像代码是用 MSVC 编译的一样。
 在构建时和运行时与 MSVC 具有更好的兼容性。
 默认情况下，它仅在 Windows 10 上提供，对于旧版本，您必须自己提供它或取决于安装它的用户。
+
+MSVCRT与UCRT --这是微软Windows上C标准库的两个变体
+libc++ clang编译器使用的C++标准库  libstdc++是gcc编译器使用的C++标准库
+
+MINGW  使用msvcrt C标准库 和gcc一致的C++标准库 libstdc++
+clang gcc都是使用UCRT（通用）C标准库　具体参考图
 ```
 scoop install versions/mingw-winlibs-llvm
 scoop install versions/mingw-winlibs-llvm-ucrt
