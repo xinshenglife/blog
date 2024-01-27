@@ -127,6 +127,13 @@ scoop install versions/dotnet6-sdk
 
 scoop install main/dotnet-sdk //最新 7，8哪里去了
 ```
+
+## rust相关
+```
+scoop install main/rust  //默认是msvc 工具链
+scoop install main/rust-msvc
+scoop install main/rust-gnu  //使用这个gnu工具链 就可以服用 scoop install versions/mingw-winlibs-llvm-ucrt-mcf
+```
 #  另外需要手动的 暂时不可用
 TortoiseGit  
 Visual Studio  
