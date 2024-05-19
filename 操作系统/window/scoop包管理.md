@@ -44,15 +44,16 @@ libc++ clang编译器使用的C++标准库  libstdc++是gcc编译器使用的C++
 MINGW  使用msvcrt C标准库 和gcc一致的C++标准库 libstdc++
 clang gcc都是使用UCRT（通用）C标准库　具体参考图
 ```
-scoop install versions/mingw-winlibs-llvm
-scoop install versions/mingw-winlibs-llvm-ucrt
-scoop install versions/mingw-winlibs-llvm-ucrt-mcf //里面带有 LLVM/Clang/LLD/LLDB 套件 UCRT mcf
+scoop install versions/mingw-winlibs-llvm    //默认是 MSVCRT
+scoop install versions/mingw-winlibs-llvm-ucrt          //-----选择这个 
+scoop install versions/mingw-winlibs-llvm-ucrt-mcf //里面带有 LLVM/Clang/LLD/LLDB 套件 UCRT mcf----最新的已经移除掉这个选项-------------XXXXXXXXXXXXXXXXX
 ```
 ## Java android-studio 相关
 ```
 scoop install extras/android-studio  //安装这个会出现下面提示 android-clt
 scoop install android-clt   //安装这个会出现下面提示 openjdk17
 scoop install java/openjdk17
+scoop install java/openjdk21
 //上述安装好了 打开Android-studio sdk管理器 手动指定到android-clt位置    show package detail可以看到指定 cmd tools 版本的   flutter doctor 都可以通过 unity3d也通过
 
 //自定义Java不同包  不能像mac那样 
