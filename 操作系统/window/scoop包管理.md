@@ -1,23 +1,36 @@
 # 可以使用scoop安装的常用软件
 注册右键菜单项目install-context.reg 和关联文件注册install-file-associations.reg 都在对应的app下 当然也有对应的删除注册项目
 
-git注意事项  tortoisegit  git路径 使用app/git/current/bin/git.exe  不要选择scoop/shims/git.exe
+git注意事项  tortoisegit  git路径 使用C:\Users\hello\scoop\shims   C:\Users\hello\scoop\apps\git\current\bin\  不要选择scoop/shims/git.exe
+
+## scoop-directory  scoop 搜索引擎 搜索软件以及相关对应的仓库
+https://rasa.github.io/scoop-directory/search?q=Tortoisegit
+
 ```
 //添加仓库
 scoop bucket add extras
 scoop bucket add versions
 scoop bucket add java
+
+// scoop bucket rm java 删除仓库
+
+scoop bucket add jr https://github.com/joaoricarte/jr-bucket    // tortoisegit 对应的仓库
+// scoop bucket add sdoog https://github.com/xrgzs/sdoog.git
+
 //必须
 scoop install main/7zip    //需要执行reg
-scoop install git   //cmd下执行git config --global credential.helper manager  //需要执行reg
-scoop install ffmpeg 
 
+scoop install git   //cmd下执行git config --global credential.helper manager  //需要执行reg
+scoop install tortoisegit   // 缺少语言包 还是需要下载
+
+scoop install extras/vscode     //需要执行reg
+
+//可用可无
+scoop install ffmpeg 
 
 scoop install extras/mobaxterm
 scoop install extras/potplayer  
-//可用可无
 scoop install extras/googlechrome
-scoop install extras/vscode     //需要执行reg
 scoop install extras/anydesk
 ```
 ## C/CPP 相关
@@ -113,6 +126,7 @@ scoop install versions/nodejs17
 scoop install versions/nodejs18
 scoop install versions/nodejs19
 scoop install versions/nodejs20
+scoop install versions/nodejs22
 ```
 ## golang相关
 ```
