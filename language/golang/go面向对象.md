@@ -29,6 +29,7 @@ toml.ParseError()   //toml是package名
     2. 初始化  变量初始化->init()->main()
     https://zhuanlan.zhihu.com/p/34211611
     3. 方法名首字母要大写才是public 否则都是私有的
+    4. 异常处理 recover()  接受异常处理   panic() 相当于throw抛异常
 
 + 多继承继承的过于浪费过于冗余  单继承的不能完全表达现实多样性 限制了多样性，golang中所谓的组合本质就是多继承
 使用组合 主要就是在struct a中直接引入 另外一个结构体struct b  然后关联方法  方法对应struct  一样实现a实例对象调用b方法  减少了冗余
