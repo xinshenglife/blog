@@ -81,6 +81,8 @@ scoop install extras/flutter
 ## python相关
 ```
 //推荐使用uv 管理工具安装 类似cargo  原来的包依赖管理工具  无法很好的管理以及兼容性 无法很好的解决依赖一个包多个版本
+//source .venv/bin/activate  激活虚拟环境  win下是 .venv/Scripts/activate
+//进入虚拟环境 才能执行python相关各种cli脚本命令  可以缺少pip 就用uv pip install pip 
 scoop install uv
 uv python list //可以查看python版本  freethreaded是无GIL版本的
 uv python install  //默认或安装最新版本  3.13 开始有一个自由线程也就是无GIL
