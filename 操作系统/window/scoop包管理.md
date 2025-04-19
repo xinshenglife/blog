@@ -80,6 +80,11 @@ scoop install extras/flutter
 ```
 ## python相关
 ```
+//推荐使用uv 管理工具安装 类似cargo  原来的包依赖管理工具  无法很好的管理以及兼容性 无法很好的解决依赖一个包多个版本
+scoop install uv
+uv python list //可以查看python版本  freethreaded是无GIL版本的
+uv python install  //默认或安装最新版本  3.13 开始有一个自由线程也就是无GIL
+
 scoop install versions/python27
 
 scoop install versions/python35
@@ -91,6 +96,8 @@ scoop install versions/python310
 scoop install versions/python311
 scoop install versions/python312
 ```
+
+
 ## php相关
 ```
 scoop install versions/php54
