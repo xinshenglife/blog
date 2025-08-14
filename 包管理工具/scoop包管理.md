@@ -38,10 +38,10 @@ scoop cache show  // 显示安装包缓存
 scoop cache rm *  // 删除所有的安装包缓存
 //删除旧版本软件，scoop更新软件不会将旧版移除，只是将创建一个链接指向新版本
 scoop reset <java>[@<version>]
-//更新软件并删除旧版本
-scoop update -k *
-//清理旧版本软件
-scoop cleanup <软件名>
+//更新软件
+scoop update  *
+//清理所有旧版本软件  有时候7zip会被其他软件使用导致无法删除可以重启
+scoop cleanup *
 
 ```
 ## C/CPP 相关
