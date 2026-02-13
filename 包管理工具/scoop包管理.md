@@ -44,6 +44,35 @@ scoop update  *
 scoop cleanup *
 
 ```
+
+## php相关
+```
+scoop install versions/php56
+
+scoop install versions/php74
+
+scoop install versions/php81
+scoop install versions/php82  //提示 scoop install extras/vcredist2022
+scoop install versions/php83
+```
+## nodejs相关
+```
+scoop install versions/nodejs22
+
+scoop install nvm  // 使用版本管理工具 下载
+nvm install 24 
+```
+## zig相关
+```
+scoop install zig
+
+scoop install glfw
+scoop install vulkan
+```
+## golang相关
+```
+scoop install main/go 
+```
 ## C/CPP 相关
 ### C/CPP库 
 - MSVCRT （Microsoft Visual C++ Runtime）
@@ -109,35 +138,6 @@ scoop install versions/python39
 scoop install versions/python310  
 scoop install versions/python311
 scoop install versions/python312
-```
-
-
-## php相关
-```
-scoop install versions/php54
-scoop install versions/php55
-scoop install versions/php56
-
-scoop install versions/php70
-scoop install versions/php71
-scoop install versions/php72
-scoop install versions/php73
-scoop install versions/php74
-
-scoop install versions/php81
-scoop install versions/php82  //提示 scoop install extras/vcredist2022
-scoop install versions/php83
-```
-## nodejs相关
-```
-scoop install versions/nodejs22
-
-scoop install nvm  // 使用版本管理工具 下载
-nvm install 24 
-```
-## golang相关
-```
-scoop install main/go 
 ```
 ## dotnet相关
 ```
