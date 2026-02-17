@@ -20,6 +20,27 @@ scoop bucket add jr https://github.com/joaoricarte/jr-bucket    // tortoisegit �
 //必须
 scoop install main/7zip    //需要执行reg
 
+scoop install aria2
+
+# 启用 aria2 多线程下载
+scoop config aria2-enabled true
+
+# 设置分块数（核心多线程参数，建议 8-16）
+scoop config aria2-split 16
+
+# 每个服务器的最大连接数（与 split 配合，建议相同数值）
+scoop config aria2-max-connection-per-server 16
+
+# 最小分块大小（低于此大小不分块，1M 适配多数场景）
+scoop config aria2-min-split-size 1M
+
+# 下载重试等待时间（可选，默认 2 秒）
+scoop config aria2-retry-wait 2
+
+# 超时时间（可选，默认 60 秒）
+scoop config aria2-timeout 60
+
+
 scoop install git   //cmd下执行git config --global credential.helper manager  //需要执行reg
 scoop install tortoisegit   // 缺少语言包 还是需要下载
 
