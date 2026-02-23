@@ -67,16 +67,10 @@ scoop install nvm  // 使用版本管理工具 下载
 nvm install 24
 ```
 
-## zig相关
-
-```
-scoop install zig
-```
-
 ## golang相关
 
 ```
-scoop install main/go
+scoop install go
 ```
 
 ## C/CPP 相关
@@ -104,11 +98,41 @@ scoop install versions/mingw-winlibs-llvm-ucrt   //-----选择这个,推荐
 - 运行库
   1. rust-gnu 默认支持 msvcrt ucrt需要配置 默认链接 libstdc++ 不直接支持 libc++ 也不建议
   2. rust-msvc 默认支持ucrt(1.59+) msvcrt需要配置，不直接支持 libc++/libstdc++
+- rustup
+  1. rustup 用于管理不同平台下的 Rust 构建版本并使其互相兼容,支持其他用于交叉编译的编译版本。 推荐安装这个,官方工具
+  2. 手动添加 C:\Users\hello\scoop\persist\rustup\.cargo\bin 到环境变量-用户变量
+  3. 依赖 mingw-winlibs-llvm-ucrt 安装gnu工具链
+
+  ```
+  scoop install versions/mingw-winlibs-llvm-ucrt //安装依赖gnu
+  rustup default stable-x86_64-pc-windows-gnu
+  rustup show  //查看默认工具链
+  ```
+
+  4. 测试
+
+  ```
+
+  rustc --version
+  cargo --version
+  cargo new rust-test
+  cd rust-test
+  cargo run
+
+  ```
+
+- 安装
+
+  ```
+  scoop install rustup   //默认是 rustup-msvc
+  scoop install rustup-gnu  //推荐安装
+  scoop install rustup-msvc
+  ```
+
+## zig相关
 
 ```
-scoop install main/rust  //默认是msvc 工具链
-scoop install main/rust-msvc
-scoop install main/rust-gnu  //使用这个gnu工具链 就可以服用 scoop install versions/mingw-winlibs-llvm-ucrt
+scoop install zig
 ```
 
 ## php相关
