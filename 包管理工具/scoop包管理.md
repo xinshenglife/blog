@@ -105,8 +105,22 @@ scoop install versions/mingw-winlibs-llvm-ucrt   //-----选择这个,推荐
 
   ```
   scoop install versions/mingw-winlibs-llvm-ucrt //安装依赖gnu
-  rustup default stable-x86_64-pc-windows-gnu
-  rustup show  //查看默认工具链
+
+  rustup toolchain list  //查看已安装的工具链
+  rustup toolchain install stable-x86_64-pc-windows-gnu  //安装gnu工具链
+  rustup default stable-x86_64-pc-windows-gnu  //后面是工具链
+
+  rustup target list //查看支持的目标平台
+  rustup target add x86_64-pc-windows-gnullvm //后面可以多个target
+  // .cargo/config.toml 配置文件实现默认 target
+  # 项目根目录的 rust-toolchain.toml
+  [
+  toolchain
+  ]
+  channel = "nightly"  # 项目专用工具链
+  targets = ["x86_64-pc-windows-gnullvm"]  # 项目常用 target
+
+  rustup show //查看默认工具链和目标平台
   ```
 
   4. 测试
@@ -153,7 +167,7 @@ scoop install java/openjdk17
 scoop install java/openjdk21
 //上述安装好了 打开Android-studio sdk管理器 手动指定到android-clt位置    show package detail可以看到指定 cmd tools 版本的   flutter doctor 都可以通过 unity3d也通过
 
-//自定义Java不同包  不能像mac那样
+//自定义Java不同包 不能像mac那样
 scoop bucket add java
 scoop install java/corretto-jdk
 ```
