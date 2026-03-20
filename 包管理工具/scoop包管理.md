@@ -46,6 +46,10 @@ scoop install extras/potplayer
 scoop install extras/googlechrome
 scoop install extras/anydesk
 
+scoop install extras/hibit-uninstaller
+scoop install extras/hibit-system-information
+
+
 //删除缓存包  卸载后又想再安装的情况，不需要重复下载
 scoop cache show  // 显示安装包缓存
 scoop cache rm *  // 删除所有的安装包缓存
@@ -87,10 +91,18 @@ scoop install go
 - C++ 运行库
   1. libc++ clang/llvm 编译器使用的C++标准库
   2. libstdc++ 是gcc编译器使用的C++标准库
+- mingw 默认是gcc的window gcc实现 现在扩展到clang+llvm了 变成了一种mingw环境(特指C/C++)   实践发现mingw很多还是不支持或者支持不完善 rust 和chrome项目相关 在win还是使用的msvc
 
 ```
 scoop install versions/mingw-winlibs-llvm    //默认是 MSVCRT
-scoop install versions/mingw-winlibs-llvm-ucrt   //-----选择这个,推荐
+scoop install versions/mingw-winlibs-llvm-ucrt   //-----
+scoop install versions/mingw-winlibs-ucrt   //-----选择这个,推荐--- gcc和llvm 分开   创作者的构思就是分开 参考 https://github.com/brechtsanders/winlibs_mingw/issues/259
+scoop install main/mingw-mstorsjo-llvm-ucrt  //  llvm选这个  gcc是clang的别名
+```
+## msys2
+  msys2 是空壳 没有gcc clang相关
+```
+scoop install msys2
 ```
 
 ## rust相关
@@ -114,9 +126,7 @@ scoop install versions/mingw-winlibs-llvm-ucrt   //-----选择这个,推荐
   rustup target add x86_64-pc-windows-gnullvm //后面可以多个target
   // .cargo/config.toml 配置文件实现默认 target
   # 项目根目录的 rust-toolchain.toml
-  [
-  toolchain
-  ]
+  [toolchain]
   channel = "nightly"  # 项目专用工具链
   targets = ["x86_64-pc-windows-gnullvm"]  # 项目常用 target
 
