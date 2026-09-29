@@ -78,32 +78,13 @@ scoop install go
 ```
 
 ## C/CPP 相关
-
-- Threading library 线程库
-  1. POSIX 基于 Windows 线程封装 pthread 接口 pthread 全版本支持
-  2. WIN32（本机 Windows 线程，但缺少 POSIX 线程 / pthread.h） 全版本支持
-  3. MCF 微软 MCF（Managed Concurrency Framework）封装，轻量级（自 GCC 13 起，另请参阅：MCF Gthread 库）
-
-- runtime library C运行库
-  1. MSVCRT 是旧的 对 C99/C11 标准支持差 但是兼容性好
-  2. UCRT 适配 Win10+ 新特性，性能更优，bug 更少 推荐安装
-
-- C++ 运行库
-  1. libc++ clang/llvm 编译器使用的C++标准库
-  2. libstdc++ 是gcc编译器使用的C++标准库
-- mingw 默认是gcc的window gcc实现 现在扩展到clang+llvm了 变成了一种mingw环境(特指C/C++)   实践发现mingw很多还是不支持或者支持不完善 rust 和chrome项目相关 在win还是使用的msvc
+- 参考下面的win各种编译器.md文件
+- win下主流 msvc原生  要么clang前端+llvm前端+cl驱动
 
 ```
-scoop install versions/mingw-winlibs-llvm    //默认是 MSVCRT
-scoop install versions/mingw-winlibs-llvm-ucrt   //-----
-scoop install versions/mingw-winlibs-ucrt   //-----选择这个,推荐--- gcc和llvm 分开   创作者的构思就是分开 参考 https://github.com/brechtsanders/winlibs_mingw/issues/259
-scoop install main/mingw-mstorsjo-llvm-ucrt  //  llvm选这个  gcc是clang的别名
+scoop install llvm
 ```
-## msys2
-  msys2 是空壳 没有gcc clang相关
-```
-scoop install msys2
-```
+
 
 ## rust相关
 
@@ -212,7 +193,8 @@ scoop install versions/dotnet6-sdk
 
 scoop install main/dotnet-sdk //最新 7，8哪里去了
 ```
-
+# microsoft-coreutils
+scoop install main/microsoft-coreutils
 # 另外需要手动的 暂时不可用
 
 TortoiseGit  
